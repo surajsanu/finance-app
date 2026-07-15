@@ -13,6 +13,8 @@ RUN npm ci
 COPY . .
 
 # Build the application
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
 RUN npm run build
 
 # Production stage
@@ -26,7 +28,8 @@ RUN npm ci --only=production
 
 # Copy built application
 COPY --from=builder /app/.next ./.next
-COPY --from=builder /app/public ./public
+COPY --from=builder /app/next.config.js ./
+COPY --from=builder /app/publi[c] ./public
 
 # Create non-root user
 RUN addgroup -g 1001 -S nodejs && \
