@@ -114,7 +114,7 @@ cp .env.example .env.local
 | `DATABASE_URL` | PostgreSQL connection string | `postgresql://postgres:postgres@localhost:5432/finance_portfolio?schema=public` |
 | `JWT_SECRET` | Secret key for JWT signing | `your-super-secret-jwt-key-change-in-production` |
 | `JWT_EXPIRES_IN` | JWT expiration time | `7d` |
-| `PORT` | Backend server port | `3001` |
+| `PORT` | Backend server port | `4000` |
 | `NODE_ENV` | Environment mode | `development` |
 | `CORS_ORIGIN` | Allowed CORS origin | `http://localhost:3000` |
 
@@ -122,7 +122,7 @@ cp .env.example .env.local
 
 | Variable | Description | Default |
 |----------|-------------|---------|
-| `NEXT_PUBLIC_API_URL` | Backend API URL | `http://localhost:3001` |
+| `NEXT_PUBLIC_API_URL` | Backend API URL | `http://localhost:4000` |
 
 ## Database Setup
 
@@ -162,7 +162,7 @@ npm run prisma:migrate
 cd backend
 npm run start:dev
 ```
-The API will be available at `http://localhost:3001`
+The API will be available at `http://localhost:4000`
 
 **Frontend:**
 ```bash
@@ -189,7 +189,7 @@ docker compose down
 Swagger documentation is available in development mode at:
 
 ```
-http://localhost:3001/api/docs
+http://localhost:4000/api/docs
 ```
 
 ### API Endpoints
